@@ -65,8 +65,8 @@
               <div class="modal-dialog"> \
                 <div class="modal-content"> \
                   <div class="modal-header"> \
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> \
                     <h4 class="modal-title">' + opt.title + '</h4> \
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> \
                   </div> \
                   <div class="modal-body"> \
                     <p>' + opt.message + '</p> \
@@ -105,7 +105,8 @@
                     mousePosition[0] = e.clientX;
                     mousePosition[1] = e.clientY;
                 }
-                startSessionTimer();
+                if (!$('#session-timeout-dialog').hasClass('show'))
+                    startSessionTimer();
 
                 // If they moved the mouse not only reset the counter
                 // but remove the modal too!
